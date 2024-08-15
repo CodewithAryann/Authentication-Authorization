@@ -1,13 +1,14 @@
-const cookieParser = require("cookie-parser");
 const express = require ("express");
-
 const app = express();
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
-app.use(cookieParser());
 
 app.get("/", function (req, res){
-    res.cookie("name", "Aryan");
-    res.send("Done");
+   let token = jwt.sign({email: "aryan@gmail.com"}, "check")
+   res.cookie("token", token)
+   console.log(token);
+   res.send(done);
 })
 
 app.listen(3000);
