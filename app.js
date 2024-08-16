@@ -1,14 +1,20 @@
 const express = require ("express");
 const app = express();
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+
+const cookieParser = require("cookie-parser");
+const path = require('path');
+
+
+
+app.set("view engine", "ejs");
+app.use(express.json());
+app.use(express.urlencoded({ extended : true}));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieParser());
 
 
 app.get("/", function (req, res){
-   let token = jwt.sign({email: "aryan@gmail.com"}, "check")
-   res.cookie("token", token)
-   console.log(token);
-   res.send(done);
+  res.send('welcome');
 })
 
 app.listen(3000);
