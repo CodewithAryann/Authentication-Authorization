@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="w-full h-screen bg-zinc-900 text-white p-10">
-        <h3 class="text-3xl mb-3">Log in your Account</h3>
-        <form method="post" action="/login">
-            <input class="px-3 py-2 rounded-md bg-transparent border-2 border-zinc-500 " type="text" placeholder="username" name="username">
-            <input class="px-3 py-2 rounded-md bg-transparent border-2 border-zinc-500 " type="password" placeholder="password" name="password">
-            <input class="px-5 py-2  bg-red-600 rounded-md" type="submit" value="log in">
+<body class="bg-zinc-900 text-white flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md p-8 space-y-6 bg-zinc-800 rounded-lg shadow-lg">
+        <h3 class="text-3xl font-semibold text-center">Log in to your Account</h3>
+        <form method="post" action="/login" class="space-y-4">
+            <div>
+                <label for="username" class="block text-sm font-medium">Username</label>
+                <input id="username" class="w-full px-4 py-2 mt-1 rounded-md bg-zinc-700 border-2 border-zinc-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" type="text" placeholder="Enter your username" name="username" required>
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-medium">Password</label>
+                <input id="password" class="w-full px-4 py-2 mt-1 rounded-md bg-zinc-700 border-2 border-zinc-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" type="password" placeholder="Enter your password" name="password" required>
+            </div>
+            <div class="flex items-center justify-between">
+                <input class="w-full py-2 mt-4 text-white bg-red-600 rounded-md cursor-pointer hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2" type="submit" value="Log In">
+            </div>
         </form>
     </div>
 </body>
