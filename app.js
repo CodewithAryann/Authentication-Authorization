@@ -14,7 +14,7 @@ app.use(cookieParser());
 
 
 app.get("/", function (req, res){
-  res.send('welcome');
+  res.render('index');
 })
 
 app.listen(3000);
